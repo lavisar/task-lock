@@ -1,36 +1,36 @@
-"use server";
+'use server'
 
-import { auth } from "@clerk/nextjs";
-import { InputType, ReturnType } from "./type";
-import { db } from "@/lib/db";
-import { createSafeAction } from "@/lib/create-safe-action";
-import { revalidatePath } from "next/cache";
-import { CreateBoard } from "./schema";
+import { auth } from '@clerk/nextjs'
+import { InputType, ReturnType } from './type'
+import { db } from '@/lib/db'
+import { createSafeAction } from '@/lib/create-safe-action'
+import { revalidatePath } from 'next/cache'
+import { CreateBoard } from './schema'
 
 const handler = async (data: InputType): Promise<ReturnType> => {
-	const { userId } = auth();
-	if (!userId) {
-		return {
-			error: "Unauthorized",
-		};
-	}
+  const { userId } = auth()
+  if (!userId) {
+    return {
+      error: 'Unauthorized'
+    }
+  }
 
-	const { title } = data;
+  const { title } = data
 
-	let board;
-	try {
-		board = await db.board.create({
-			data: {
-				title,
-			},
-		});
-	} catch (error) {
-		return {
-			error: "Failed to create board",
-		};
-	}
-	revalidatePath("/board/${board.id}");
-	return { data: board };
-};
+  let board
+  try {
+    board = await db.board.create({
+      data: {
+        title
+      }
+    })
+  } catch (error) {
+    return {
+      error: 'Failed to create board'
+    }
+  }
+  revalidatePath('/board/${board.id}')
+  return { data: board }
+}
 
-export const createBoard = createSafeAction(CreateBoard, handler);
+export const createBoard = createSafeAction(CreateBoard, handler)
