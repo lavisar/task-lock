@@ -1,4 +1,4 @@
-import Sidebar from "../_component/sidebar";
+import Sidebar from '../_component/sidebar'
 
 const OrganizationLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +10,7 @@ const OrganizationLayout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default OrganizationLayout;
+export default OrganizationLayout

@@ -1,7 +1,6 @@
-import Logo from "@/components/logo";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-
+import Logo from '@/components/logo'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export const Navbar = () => {
   return (
@@ -13,10 +12,10 @@ export const Navbar = () => {
             <Link href="/sign-in">Login</Link>
           </Button>
           <Button size="sm" asChild>
-          <Link href="/sign-up">Get TaskLock for free</Link>            
+            <Link href="/sign-up">Get TaskLock for free</Link>
           </Button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

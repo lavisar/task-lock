@@ -8,20 +8,36 @@ import { revalidatePath } from 'next/cache'
 import { CreateBoard } from './schema'
 
 const handler = async (data: InputType): Promise<ReturnType> => {
-  const { userId } = auth()
-  if (!userId) {
+  const { userId, orgId } = auth()
+  if (!userId || !orgId) {
     return {
       error: 'Unauthorized'
     }
   }
 
-  const { title } = data
+  const { title, image } = data
+
+  const [imageId, imageThumbUrl, imageFullUrl, imageLinkHTML, imageUserName] = image.split('|')
+
+  console.log({ imageId, imageThumbUrl, imageFullUrl, imageLinkHTML, imageUserName })
+
+  if (!imageId || !imageThumbUrl || !imageFullUrl || !imageLinkHTML || !imageUserName) {
+    return {
+      error: 'Missing field. Failed to create board.'
+    }
+  }
 
   let board
   try {
     board = await db.board.create({
       data: {
-        title
+        title,
+        orgId,
+        imageId,
+        imageThumbUrl,
+        imageFullUrl,
+        imageUserName,
+        imageLinkHTML
       }
     })
   } catch (error) {

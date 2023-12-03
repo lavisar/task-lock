@@ -1,4 +1,4 @@
-import Navbar from "./_component/navbar";
+import Navbar from './_component/navbar'
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -6,7 +6,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <Navbar />
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default DashboardLayout;
+export default DashboardLayout
