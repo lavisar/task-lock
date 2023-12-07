@@ -9,6 +9,7 @@ import { Hint } from '@/components/hint'
 import { Skeleton } from '@/components/ui/skeleton'
 import { MAX_FREE_BOARDS } from '@/constant/boards'
 import { getAvailabeCount } from '@/lib/org-limit'
+import { checkSubcription } from '@/lib/subcription'
 
 export const BoardList = async () => {
   const { orgId } = auth()
@@ -26,6 +27,7 @@ export const BoardList = async () => {
     }
   })
   const availableCount = await getAvailabeCount()
+  const isPro = await checkSubcription()
   // console.log('availableCount', availableCount)
   return (
     <div className='space-y-4'>
@@ -51,7 +53,9 @@ export const BoardList = async () => {
             className='aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition'
           >
             <p className='text-sm'>Create new boards</p>
-            <span className='text-xs'>{`${MAX_FREE_BOARDS - availableCount} remaining`}</span>
+            <span className='text-xs'>
+              {isPro ? 'Unlimited' : `${MAX_FREE_BOARDS - availableCount} remaining`}
+            </span>
             <Hint
               sideOffSet={40}
               description={`Free Workspaces can have up tp 5 open boards. For unlimited boards upgrade this workspace.`}
