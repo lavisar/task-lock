@@ -6,8 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix --ext ts,tsx",
-    "prettier": "prettier --write \"**/(**.tsx|*.ts|*.scss|*.css)\"",
     "postinstall": "prisma generate"
   },
   "browserslist": {
