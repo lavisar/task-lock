@@ -13,7 +13,11 @@ export const Hint = ({ children, description, side = 'bottom', sideOffSet = 0 }:
       <TooltipProvider>
         <Tooltip delayDuration={0}>
           <TooltipTrigger>{children}</TooltipTrigger>
-          <TooltipContent sideOffset={sideOffSet} side={side} className="text-xs max-w-[220px] break-words">
+          <TooltipContent
+            sideOffset={sideOffSet}
+            side={side}
+            className='text-xs max-w-[220px] break-words'
+          >
             {description}
           </TooltipContent>
         </Tooltip>
