@@ -47,6 +47,7 @@ model Card {
   title         String
   order         Int
   description   String? @db.Text
+  dueDay        DateTime?
 
   listId String
   list          List @relation(fields: [listId], references: [id], onDelete: Cascade)

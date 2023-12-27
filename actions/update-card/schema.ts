@@ -12,6 +12,12 @@ export const UpdateCard = z.object({
         message: 'Description is too short'
       })
   ),
+  dueDay: z.optional(
+    z.date({
+      required_error: 'Due day is required',
+      invalid_type_error: 'Due day is required'
+    })
+  ),
   title: z.optional(
     z
       .string({
