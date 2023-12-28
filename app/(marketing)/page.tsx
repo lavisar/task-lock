@@ -21,8 +21,8 @@ const MarketingPage = () => {
           <Medal className="h-6 w-6 mr-2" />
           No 1 task management
         </div>
-        <h1 className="text-3xl md:text-6xl text-center text-neutral-800">TaskLock helps team move</h1>
-        <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit">
+        <h1 className="text-3xl md:text-6xl text-center text-neutral-800 dark:text-white py-3">TaskLock helps team move</h1>
+        <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md w-fit">
           work forward.
         </div>
       </div>
