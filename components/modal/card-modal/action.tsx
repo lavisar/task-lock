@@ -48,13 +48,13 @@ export const Actions = ({ data }: ActionProps) => {
   }
   return (
     <div className='space-y-2 mt-2'>
-      <p className='text-xs font-semibold'>Actions</p>
+      <p className='text-xs font-semibold dark:text-white'>Actions</p>
       <Button
         onClick={onCopy}
         disabled={isLoadingCopy}
         size='inline'
         variant='gray'
-        className='w-full justify-start'
+        className='w-full justify-start dark:bg-bgDarkMode dark:text-textDarkMode'
       >
         <Copy className='h-4 w-4 mr-2' />
         Copy
@@ -64,7 +64,7 @@ export const Actions = ({ data }: ActionProps) => {
         disabled={isLoadingDelete}
         size='inline'
         variant='gray'
-        className='w-full justify-start'
+        className='w-full justify-start dark:bg-bgDarkMode dark:text-textDarkMode'
       >
         <Trash className='h-4 w-4 mr-2' />
         Delete
