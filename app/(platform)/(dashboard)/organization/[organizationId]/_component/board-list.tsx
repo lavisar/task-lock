@@ -28,10 +28,9 @@ export const BoardList = async () => {
   })
   const availableCount = await getAvailabeCount()
   const isPro = await checkSubcription()
-  // console.log('availableCount', availableCount)
   return (
     <div className='space-y-4'>
-      <div className='flex items-center font-semibold text-lg text-neutral-700'>
+      <div className='flex items-center font-semibold text-lg text-neutral-700 dark:text-textDarkMode'>
         <User2 className='h-6 w-6 mr-2' />
         Your boards
       </div>
@@ -44,7 +43,7 @@ export const BoardList = async () => {
             style={{ backgroundImage: `url(${board.imageThumbUrl})` }}
           >
             <div className='absolute inset-0 bg-black/30 group-hover:bg-black/40 transition' />
-            <p className='relative font-semibold text-white'>{board.title}</p>
+            <p className='relative font-semibold group-hover:backdrop-blur-xl text-white'>{board.title}</p>
           </Link>
         ))}
         <FormPopover sideOffset={10} side='right'>

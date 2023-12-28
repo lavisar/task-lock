@@ -41,7 +41,7 @@ export const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
   ) => {
     const { pending } = useFormStatus()
     return (
-      <div className='space-y-2 w-full'>
+      <div className='space-y-2 w-full '>
         <div className='space-y-1 w-full'>
           {label ? (
             <Label htmlFor={id} className='text-xs font-semibold text-neutral-700'>

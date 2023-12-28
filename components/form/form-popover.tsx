@@ -65,7 +65,7 @@ export const FormPopover = ({
             <FromPicker id='image' errors={fieldErrors} />
             <FormInput id='title' label='Board Title' type='text' errors={fieldErrors} />
           </div>
-          <FormSubmit className='w-full'>Create</FormSubmit>
+          <FormSubmit className='w-full dark:bg-slate-500'>Create</FormSubmit>
         </form>
       </PopoverContent>
     </Popover>
