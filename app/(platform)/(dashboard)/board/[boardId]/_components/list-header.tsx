@@ -47,10 +47,12 @@ export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
     const title = formData.get('title') as string
     const id = formData.get('id') as string
     const boardId = formData.get('boardId') as string
-
     if (title === data.title) {
-      disableEditing()
+      return
     }
+    // if (title === data.title) {
+    //   disableEditing()
+    // }
     execute({ title, id, boardId })
   }
 

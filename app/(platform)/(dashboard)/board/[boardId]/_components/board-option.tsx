@@ -6,6 +6,7 @@ import { useAction } from '@/hooks/use-action'
 import { Button } from '@/components/ui/button'
 import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { toast } from 'sonner'
+import { BoardUpdateBackgound } from './board-update-bg'
 
 interface BoardOptionProps {
   id: string
@@ -37,11 +38,19 @@ export const BoardOptions = ({ id }: BoardOptionProps) => {
             <X className='h-4 w-4' />
           </Button>
         </PopoverClose>
+        <BoardUpdateBackgound align='start' side='left' sideOffset={15} id={id}>
+          <Button
+            variant='ghost'
+            className='rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm'
+          >
+            Change board's background
+          </Button>
+        </BoardUpdateBackgound>
         <Button
           variant='ghost'
           onClick={onDelete}
           disabled={isLoading}
-          className='rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm'
+          className='rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm hover:bg-red-600 hover:text-white'
         >
           Delete this board
         </Button>
