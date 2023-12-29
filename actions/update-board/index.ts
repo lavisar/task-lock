@@ -18,7 +18,13 @@ const handler = async (data: InputType): Promise<ReturnType> => {
       error: 'Unauthorized'
     }
   }
-  const { title, id } = data
+  const { title, image, id } = data
+
+  let imageId, imageThumbUrl, imageFullUrl, imageLinkHTML, imageUserName
+  
+  if (image) {
+    ;[imageId, imageThumbUrl, imageFullUrl, imageLinkHTML, imageUserName] = image.split('|')
+  }
   let board
   try {
     board = await db.board.update({
@@ -27,7 +33,12 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         orgId
       },
       data: {
-        title
+        title,
+        imageId,
+        imageThumbUrl,
+        imageFullUrl,
+        imageUserName,
+        imageLinkHTML
       }
     })
     await CreateAuditLog({

@@ -64,7 +64,7 @@ export const Actions = ({ data }: ActionProps) => {
         disabled={isLoadingDelete}
         size='inline'
         variant='gray'
-        className='w-full justify-start dark:bg-bgDarkMode dark:text-textDarkMode'
+        className='w-full justify-start dark:bg-bgDarkMode dark:text-textDarkMode hover:bg-red-600 hover:text-white'
       >
         <Trash className='h-4 w-4 mr-2' />
         Delete
